@@ -14,6 +14,9 @@ class  App extends Component{
             <Main />
             <List/>
             <Footer name = "Makanan Nusantara" tahun = "2019"/>
+          {
+            //Komentar di dalam Return menggunakan {}
+          }
         </div>
     );
   }

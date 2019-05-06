@@ -5,7 +5,8 @@ class Main extends Component{
         this.state = {
             title:"Menu Makanan",
             title2 :"Menu Minuman",
-            inputValue:"Nasi Padang"
+            inputValue:"",
+            inputKota:""
         };
         this.ubahData = this.ubahData.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -21,15 +22,15 @@ class Main extends Component{
              }
         } );
     }
-    handleChange(e){
-        // this.setState({inputValue:e.target.value});
+    handleChange(value,e){
+        this.setState({[value]:e.target.value});
     // console.log(e.target.value)
-        const eventTarget = e.target.value;
-        this.setState((state, props) => {
-            return{
-                inputValue: eventTarget
-            };
-        });
+    //     const eventTarget = e.target.value;
+    //     this.setState((state, props) => {
+    //         return{
+    //             inputValue: eventTarget
+    //         };
+    //     });
     }
 
     render() {
@@ -40,7 +41,12 @@ class Main extends Component{
               <button onClick={this.ubahData}>Ubah Data </button>
               <br/>
               <br/>
-              <input type="text" value={this.state.inputValue} onChange={this.handleChange}/>
+              <input type="text" value={this.state.inputValue}
+                     onChange={(e)=>this.handleChange("inputValue",e) }
+                     placeholder={"makanan"}/>
+             <br/>
+              <input type="text" value={this.state.inputKota} placeholder={"Nama Kota"}
+              onChange={e => this.handleChange("inputKota",e)}/>
           </div>
         );
     }

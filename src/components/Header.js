@@ -14,7 +14,12 @@ class  Header extends  Component {
         alert(this.state.daftar);
         alert(value);
     }
+    componentDidMount() {
+        console.log("Jalan : componentDidMount");
+    }
+
     render() {
+        console.log("Jalan : Render");
         return (
             <div>
                 <h2> Makanan Khas Indonesia </h2>
