@@ -10,6 +10,7 @@ class  Header extends  Component {
             date: new Date()
         };
         this.handlePesan = this.handlePesan.bind(this);
+        this.handleElements = this.handleElements.bind(this);
     }
     handlePesan(value, e ){
         e.preventDefault()
@@ -20,8 +21,15 @@ class  Header extends  Component {
         console.log("Jalan : componentDidMount");
     }
 
+    handleElements(){
+        this.setState((state,props) =>{
+            return{statusRendering:!state.statusRendering };
+        });
+    }
+
     render() {
         console.log("Jalan : Render");
+        console.log(this.state.statusRendering);
         return(
             <div>
                 {
@@ -38,6 +46,7 @@ class  Header extends  Component {
                         </div>
                     )
                 }
+                <button onClick={this.handleElements}>Change</button>
             </div>
         );
         // return (
